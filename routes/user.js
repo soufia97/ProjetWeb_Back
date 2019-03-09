@@ -12,6 +12,6 @@ router.delete('/:userId', user.delete);
 router.post('/:userId', user.update);
 
 /* create  one user */
-router.put('/:userId', user.create);
+router.put('/', user.create);
 
 module.exports = router;
