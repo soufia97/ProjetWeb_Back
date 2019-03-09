@@ -1,23 +1,17 @@
 var express = require('express');
 var router = express.Router();
+// we import our user controller
+var user = require('../controllers/user.controller');
 
 /* GET one user */
-router.get('/:userId', function(req, res, next) {
-  res.json('respond with a user');
-});
+router.get('/:userId', user.findOne);
 
 /* DELETE  one user */
-router.delete('/:userId', function(req, res, next) {
-  res.json('respond with a user id deleted');
-});
+router.delete('/:userId', user.delete);
 /* update  one user */
-router.post('/:userId', function(req, res, next) {
-  res.json('respond with a user id updated');
-});
+router.post('/:userId', user.update);
 
 /* create  one user */
-router.put('/:userId', function(req, res, next) {
-  res.json('respond with a user id created');
-});
+router.put('/:userId', user.create);
 
 module.exports = router;
