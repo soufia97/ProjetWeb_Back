@@ -16,7 +16,7 @@ router.post('/:userId', function(req, res, next) {
 });
 
 /* create  one user */
-router.put('/:userId', function(req, res, next) {
+router.put('/', function(req, res, next) {
   res.json('respond with a user id created');
 });
 
