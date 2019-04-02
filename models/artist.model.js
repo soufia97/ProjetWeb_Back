@@ -11,7 +11,7 @@ const artistSchema = new mongoose.Schema(
     followers: Number,
     album: [{ type: Schema.Types.ObjectId, ref: 'album' }],
   },
-  {
+  { 
     //timestamps: true,
     collection: 'artist'
   }
