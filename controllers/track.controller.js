@@ -35,6 +35,7 @@ exports.create = (req, res) => {
     });
 };
 
+/*
 // Retrieve and return all Track from the database.
 exports.findAll = (req, res) => {
     Track.find()
@@ -47,6 +48,34 @@ exports.findAll = (req, res) => {
         message: err.message || 'Some error occurred while retrieving tracks.'
       });
     });
+}; 
+
+// Return 6 Tracks from the database order by most liked
+exports.mostLiked = (req, res) => {
+  Track.find().limit(6).sort({likes:'desc'})
+  .then(track => {
+      console.log(track);
+    res.status(200).json(track);
+  })
+  .catch(err => {
+    res.status(500).json({
+      message: err.message || 'Some error occurred while retrieving tracks.'
+    });
+  });
+};
+*/
+// Return total number of listenings 
+exports.listenings = (req, res) => {
+  Track.find()
+  .then(track => {
+      console.log(track);
+    res.status(200).json(track);
+  })
+  .catch(err => {
+    res.status(500).json({
+      message: err.message || 'Some error occurred while retrieving tracks.'
+    });
+  });
 };
 
 // Find a single track with a TrackID
