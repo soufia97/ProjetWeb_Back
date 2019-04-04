@@ -69,9 +69,15 @@ exports.mostLiked = (req, res) => {
 exports.listenings = (req, res) => {
   Track.aggregate(
     [
-       {
-         $sum : "$listenings"
-       }
+      {
+        $group: {
+          _id: "Total listenings", 
+          total: {
+            $sum: "$listenings"
+          }
+        }
+      }
+      
     ]
  )
   .then(track => {
@@ -89,9 +95,14 @@ exports.listenings = (req, res) => {
 exports.likeCount = (req, res) => {
   Track.aggregate(
     [
-       {
-         $sum : "$likes"
-       }
+      {
+        $group: {
+          _id: "Total Likes", 
+          total: {
+            $sum: "$likes"
+          }
+        }
+      }
     ]
  )
   .then(track => {
@@ -109,9 +120,14 @@ exports.likeCount = (req, res) => {
 exports.avgTime = (req, res) => {
   Track.aggregate(
     [
-       {
-         $avg : "$duration"
-       }
+      {
+        $group: {
+          _id: "Duration average", 
+          total: {
+            $avg: "$duration"
+          }
+        }
+      }
     ]
  )
   .then(track => {
