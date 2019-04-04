@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const config = require('./config/database.config');
+const cors = require("cors");
 
 const artistRouter = require('./routes/artist');
 
@@ -15,6 +16,7 @@ const trackRouter = require('./routes/track');
 // on se connecte à la base de données
 mongoose.connect('mongodb://localhost:27017/projet', {useNewUrlParser: true});
 const app = express();
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
