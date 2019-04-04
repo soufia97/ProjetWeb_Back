@@ -35,7 +35,7 @@ exports.create = (req, res) => {
     });
 };
 
-/*
+
 // Retrieve and return all Track from the database.
 exports.findAll = (req, res) => {
     Track.find()
@@ -63,10 +63,57 @@ exports.mostLiked = (req, res) => {
     });
   });
 };
-*/
+
+
 // Return total number of listenings 
 exports.listenings = (req, res) => {
-  Track.find()
+  Track.aggregate(
+    [
+       {
+         $sum : "$listenings"
+       }
+    ]
+ )
+  .then(track => {
+      console.log(track);
+    res.status(200).json(track);
+  })
+  .catch(err => {
+    res.status(500).json({
+      message: err.message || 'Some error occurred while retrieving tracks.'
+    });
+  });
+};
+
+// Return total number of likes 
+exports.likeCount = (req, res) => {
+  Track.aggregate(
+    [
+       {
+         $sum : "$likes"
+       }
+    ]
+ )
+  .then(track => {
+      console.log(track);
+    res.status(200).json(track);
+  })
+  .catch(err => {
+    res.status(500).json({
+      message: err.message || 'Some error occurred while retrieving tracks.'
+    });
+  });
+};
+
+// DUREE A REVOIR - Return average time of all tracks 
+exports.avgTime = (req, res) => {
+  Track.aggregate(
+    [
+       {
+         $avg : "$duration"
+       }
+    ]
+ )
   .then(track => {
       console.log(track);
     res.status(200).json(track);

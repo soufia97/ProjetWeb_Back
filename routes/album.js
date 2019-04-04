@@ -16,7 +16,7 @@ router.post('/:id', album.update);
 /* create  one album */
 router.put('/', album.create);
 
-/* Order albums per genre */
+/* Group albums by genre */
 router.get('/', album.findGenre);
 
 module.exports = router;
