@@ -37,9 +37,10 @@ const album = new Album({
     });
 };
 
+
 // Retrieve and return all albums from the database.
 exports.findAll = (req, res) => {
-    Album.find()
+    Album.find({})
     .then(album => {
         console.log(album);
       res.status(200).json(album);
@@ -50,6 +51,32 @@ exports.findAll = (req, res) => {
       });
     });
 };
+
+
+
+// Return albums grouped by genre 
+exports.findGenre = (req, res) => {
+  Album.aggregate(
+    [
+       {
+         $group : {
+            _id : "$genre",
+            total: { $sum: "$title" }
+         }
+       }
+    ]
+ )
+  .then(album => {
+      console.log(album);
+    res.status(200).json(album);
+  })
+  .catch(err => {
+    res.status(500).json({
+      message: err.message || 'Some error occurred while retrieving albums.'
+    });
+  });
+};
+
 
 // Find a single album with a albumId
 exports.findOne = (req, res) => {
