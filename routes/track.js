@@ -17,5 +17,11 @@ router.put('/', track.create);
 
 /* Get top 6 songs */
 router.get('/mostLiked', track.mostLiked);
+/* Get total number of likes */
+router.get('/likeCount', track.likeCount);
+/* Get top 6 songs */
+router.get('/avgTime', track.avgTime);
+
+
 
 module.exports = router;

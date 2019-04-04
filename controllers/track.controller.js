@@ -105,7 +105,7 @@ exports.likeCount = (req, res) => {
   });
 };
 
-// DUREE A REVOIR - Return average time of all tracks 
+// Return average time of all tracks 
 exports.avgTime = (req, res) => {
   Track.aggregate(
     [

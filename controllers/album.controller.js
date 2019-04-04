@@ -61,7 +61,7 @@ exports.findGenre = (req, res) => {
        {
          $group : {
             _id : "$genre",
-            total: { $sum: "$title" }
+            total : { "$sum": 1 }
          }
        }
     ]
