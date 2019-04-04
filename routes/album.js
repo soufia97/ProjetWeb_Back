@@ -6,7 +6,7 @@ var album = require('../controllers/album.controller');
 /* GET all albums */
 router.get('/', album.findAll);
 /* GET one album */
-router.get('/:id', album.findOne);
+router.get('/findOne/:id', album.findOne);
 
 /* DELETE  one album */
 router.delete('/:id', album.delete);
@@ -17,6 +17,6 @@ router.post('/:id', album.update);
 router.put('/', album.create);
 
 /* Group albums by genre */
-router.get('/', album.findGenre);
+router.get('/findGenre', album.findGenre);
 
 module.exports = router;
