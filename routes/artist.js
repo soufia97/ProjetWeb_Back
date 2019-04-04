@@ -4,9 +4,9 @@ var router = express.Router();
 var artist = require('../controllers/artist.controller');
 
 /* GET all artist */
-//router.get('/', artist.findAll);
+router.get('/', artist.findAll);
 /* GET one artist */
-router.get('/:id', artist.findOne);
+router.get('/findOne/:id', artist.findOne);
 /* DELETE  one artist */
 router.delete('/:id', artist.delete);
 /* update  one artist */
@@ -14,6 +14,6 @@ router.post('/:id', artist.update);
 /* create  one artist */
 router.put('/', artist.create);
 /* sort artist by number of followers */
-router.get('/',artist.topFollowers);
+router.get('/topFollowers',artist.topFollowers);
 
 module.exports = router;

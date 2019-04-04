@@ -36,7 +36,7 @@ const artist = new Artist({
       });
     });
 };
-/*
+
 // Retrieve and return all Artists from the database.
 exports.findAll = (req, res) => {
     Artist.find({})
@@ -49,7 +49,7 @@ exports.findAll = (req, res) => {
         message: err.message || 'Some error occurred while retrieving artists.'
       });
     });
-}; */
+}; 
 
 // Return 3 Artists from the database order by number of followers.
 exports.topFollowers = (req, res) => {
