@@ -65,6 +65,20 @@ exports.topFollowers = (req, res) => {
   });
 };
 
+// Return artists order by name
+exports.artistSort = (req, res) => {
+  Artist.find({}).sort({name : 'asc'})
+  .then(artistes => {
+      console.log(artistes);
+    res.status(200).json(artistes);
+  })
+  .catch(err => {
+    res.status(500).json({
+      message: err.message || 'Some error occurred while retrieving artists.'
+    });
+  });
+};
+
 // Find a single artist with a artistId
 exports.findOne = (req, res) => {
   Artist.findById(req.params.id)

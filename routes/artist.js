@@ -5,6 +5,8 @@ var artist = require('../controllers/artist.controller');
 
 /* GET all artist */
 router.get('/', artist.findAll);
+/* GET artist order by name */
+router.get('/sorted', artist.artistSort);
 /* GET one artist */
 router.get('/findOne/:id', artist.findOne);
 /* DELETE  one artist */
