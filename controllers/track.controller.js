@@ -40,7 +40,6 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     Track.find()
     .then(track => {
-        console.log(track);
       res.status(200).json(track);
     })
     .catch(err => {
@@ -54,7 +53,6 @@ exports.findAll = (req, res) => {
 exports.mostLiked = (req, res) => {
   Track.find().limit(6).sort({likes:'desc'})
   .then(track => {
-      console.log(track);
     res.status(200).json(track);
   })
   .catch(err => {
@@ -81,7 +79,6 @@ exports.listenings = (req, res) => {
     ]
  )
   .then(track => {
-      console.log(track);
     res.status(200).json(track);
   })
   .catch(err => {
@@ -106,7 +103,6 @@ exports.likeCount = (req, res) => {
     ]
  )
   .then(track => {
-      console.log(track);
     res.status(200).json(track);
   })
   .catch(err => {
@@ -131,7 +127,6 @@ exports.avgTime = (req, res) => {
     ]
  )
   .then(track => {
-      console.log(track);
     res.status(200).json(track);
   })
   .catch(err => {

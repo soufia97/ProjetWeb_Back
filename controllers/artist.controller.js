@@ -41,7 +41,6 @@ const artist = new Artist({
 exports.findAll = (req, res) => {
     Artist.find({})
     .then(artistes => {
-        console.log(artistes);
       res.status(200).json(artistes);
     })
     .catch(err => {
@@ -55,7 +54,6 @@ exports.findAll = (req, res) => {
 exports.topFollowers = (req, res) => {
   Artist.find({}).limit(3).sort({followers : 'desc'})
   .then(artistes => {
-      console.log(artistes);
     res.status(200).json(artistes);
   })
   .catch(err => {
@@ -69,7 +67,6 @@ exports.topFollowers = (req, res) => {
 exports.artistSort = (req, res) => {
   Artist.find({}).sort({name : 'asc'})
   .then(artistes => {
-      console.log(artistes);
     res.status(200).json(artistes);
   })
   .catch(err => {

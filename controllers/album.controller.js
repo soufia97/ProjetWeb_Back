@@ -42,7 +42,6 @@ const album = new Album({
 exports.findAll = (req, res) => {
     Album.find({})
     .then(album => {
-        console.log(album);
       res.status(200).json(album);
     })
     .catch(err => {
@@ -67,7 +66,6 @@ exports.findGenre = (req, res) => {
     ]
  )
   .then(album => {
-      console.log(album);
     res.status(200).json(album);
   })
   .catch(err => {
