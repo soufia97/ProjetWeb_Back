@@ -1,6 +1,8 @@
 # Projet Web 2019 : Back-end
 Morgane Figard & Soufia Maherzi
 
+• Lien du front-end : https://github.com/morganefigard/ProjetWeb_Front • 
+
 ## Configuration du back
 
 Le back-end de ce projet est divisé en 3 Dossiers : 
@@ -19,5 +21,6 @@ Afin de créer votre base de données sur le logiciel MongoDB Compass, il est re
   - Créer au minimum 6 albums en respectant le modèle suivant : title(String), genre(String), release(String), cover_url(String) 
   - Créer au minimum 6 tracks en respectant le modèle suivant : title(String), duration(Int32), listenings(Int32), likes(Int32)
 
-  NB: - Faire varier les genres des albums afin d'avoir une meilleure visualisation d'un des widgets implémenté dans le front.
-      - La durée des chansons est en secondes.
+  NB: 
+  - Faire varier les genres des albums afin d'avoir une meilleure visualisation d'un des widgets implémenté dans le front.
+  - La durée des chansons est en secondes.
